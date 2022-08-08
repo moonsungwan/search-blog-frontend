@@ -65,6 +65,11 @@
                         @OnGoDetail="goDetail"
                         @OnRegistBookmark="registBookmark"
                     />
+                    <pagination
+                        v-model="parameters.page"
+                        :records="parameters.records"
+                        @paginate="changePage"
+                    />
                 </div>
             </div>
         </article>
@@ -83,8 +88,9 @@ export default {
             parameters: {
                 query: '',
                 page: 1,
-                size: 10,
-                sort: 'ACCURACY',
+                size: 25,
+                sort: 'accuracy',
+                records: 0,
             },
         };
     },
@@ -99,6 +105,10 @@ export default {
         changeSort(sort) {
             this.parameters.sort = sort;
 
+            this.getList();
+        },
+        changePage(page) {
+            this.parameters.page = page;
             this.getList();
         },
         async enterQuery() {
@@ -116,6 +126,7 @@ export default {
             } else {
                 const { data } = await this.$store.dispatch('GET_BLOG_LIST', this.parameters);
                 this.list = data.documents;
+                this.parameters.records = parseInt(data.meta.pageable_count);
 
                 this.$refs.history.getList();
             }

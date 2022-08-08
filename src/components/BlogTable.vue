@@ -11,9 +11,9 @@
                             v-on:click="goDetail(item.url)"
                             class="tit_faq"
                             style="width:90%; cursor:pointer"
-                            >{{ item.blogname }}</a
-                        >
-                        <strong style="width:5%" v-html="item.title"></strong>
+                            >{{ item.blogname }} <br />
+                            <strong style="width:5%" v-html="item.title"></strong>
+                        </a>
                         {{ $utils.formatDate(item.datetime) }}
                     </div>
                 </div>
