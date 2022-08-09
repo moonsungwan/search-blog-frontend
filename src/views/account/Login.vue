@@ -11,7 +11,7 @@
                     v-model="data.loginId"
                     type="text"
                     placeholder="아이디를 입력해주세요."
-                    maxlength="15"
+                    maxlength="12"
                     v-on:keyup.enter="login()"
                     style="border-bottom: 1px solid black;"
                 />

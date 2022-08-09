@@ -22,7 +22,7 @@
                     type="text"
                     v-model="data.nickName"
                     placeholder="이름을 입력해주세요."
-                    maxlength="15"
+                    maxlength="12"
                     v-on:keyup.enter="signUp()"
                     style="margin-top: 10px; border-bottom: 1px solid black;"
                 />
@@ -53,9 +53,9 @@ export default {
     data() {
         return {
             data: {
-                loginId: '',
-                nickName: '',
-                password: '',
+                loginId: 'accountB',
+                nickName: '회원가입테스트',
+                password: '1234',
             },
         };
     },
