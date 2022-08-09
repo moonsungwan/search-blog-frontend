@@ -8,7 +8,7 @@
                     </button>
                     <button v-else class="link_menu" style="width:100%">
                         <span v-on:click="goBlogList()" class="txt">블로그 검색</span>&nbsp;
-                        <span v-on:click="goBookmark()" class="txt">북마크 목록</span>&nbsp;
+                        <span v-on:click="goBookmark()" class="txt">북마크 즐겨찾기</span>&nbsp;
                         <span v-on:click="logout()" class="txt">로그아웃</span>
                     </button>
                 </li>

@@ -103,8 +103,8 @@ $ npm test Login.test.js
 * ### 회원가입
 ![image](https://user-images.githubusercontent.com/18672444/183445004-62d3fddf-46df-4ac6-8491-e8f134d0060e.png)
 
-* ### 블로그 검색 (캡처를 위해 10개 표시)
-![image](https://user-images.githubusercontent.com/18672444/183678243-69f6ed69-2cdd-47d0-b2d0-6aaf2ae78521.png)
+* ### 블로그 검색 (캡처를 위해 10개 표시 - 기본 25개)
+![image](https://user-images.githubusercontent.com/18672444/183687422-11d1545a-bcab-4d83-82e9-d8487daeaae6.png)
 
 * ### 북마크
-![image](https://user-images.githubusercontent.com/18672444/183678496-8fda7f3f-a109-4107-8421-d0e79e7369bf.png)
+![image](https://user-images.githubusercontent.com/18672444/183687500-e5eafa4e-7997-42f4-b726-7c20b855449d.png)
