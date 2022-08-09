@@ -50,6 +50,7 @@ $ npm run serve
 
 ### 테스트 방법
 ```
+서버 실행 후 진행
 $ cd search-blog-frontend
 $ npm test Login.test.js
 ```
