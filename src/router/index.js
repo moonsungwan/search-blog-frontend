@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 import { getTokenFromStorage } from '@/utils/storage.js';
 import { isEmpty } from '@/utils/utils.js';
 
+import { requireAuth } from './require';
 import MenuBlog from './menu/blog';
 import MenuBookmarkBlog from './menu/bookmarkBlog';
 
@@ -13,13 +14,7 @@ Vue.use(VueRouter);
 const routes = [
     {
         path: '/',
-        beforeEnter: (to, from, next) => {
-            if (isEmpty(getTokenFromStorage())) {
-                return next({ name: 'Login' });
-            } else {
-                return next({ name: 'BlogList' });
-            }
-        },
+        beforeEnter: requireAuth,
     },
     {
         path: '/blog/list',

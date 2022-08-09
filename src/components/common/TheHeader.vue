@@ -19,6 +19,7 @@
 </template>
 <script>
 import { deleteTokenToStorage } from '@/utils/storage.js';
+
 export default {
     name: 'TheHeader',
     methods: {
@@ -31,14 +32,14 @@ export default {
                 this.$toast(message);
 
                 deleteTokenToStorage();
-                this.$router.go({ name: 'Login' });
+                this.$router.push({ name: 'Login' });
             }
         },
         goBlogList() {
-            this.$router.push({ name: 'BlogList' });
+            this.$router.push({ name: 'BlogList' }).catch(() => {});
         },
         goBookmark() {
-            this.$router.push({ name: 'BookmarkBlogList' });
+            this.$router.push({ name: 'BookmarkBlogList' }).catch(() => {});
         },
     },
 };

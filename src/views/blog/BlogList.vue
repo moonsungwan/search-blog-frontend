@@ -22,7 +22,7 @@
                             class="btn_del"
                             v-on:click="deleteQuery()"
                         >
-                            <span class="ico_del">삭제</span>
+                            <span class="ico_del">지우기</span>
                         </button>
                         <img
                             style="right:-120px;"
@@ -112,8 +112,13 @@ export default {
             this.getList();
         },
         async enterQuery() {
-            this.registSearchHistory();
-            this.getList();
+            if (!this.$utils.isEmpty(this.parameters.query)) {
+                this.registSearchHistory();
+                this.getList();
+            }
+        },
+        deleteQuery() {
+            this.parameters.query = '';
         },
         async registSearchHistory() {
             await this.$store.dispatch('REGIST_SEARCH_HISTORY', {
