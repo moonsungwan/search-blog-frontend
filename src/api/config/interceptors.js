@@ -3,7 +3,11 @@ import router from '@/router';
 
 import qs from 'qs';
 
-import { getTokenFromStorage, deleteTokenToStorage } from '@/utils/storage';
+import {
+    getTokenFromStorage,
+    deleteTokenToStorage,
+    deleteSearchWordToStorage,
+} from '@/utils/storage';
 
 let setInterceptors = instance => {
     instance.interceptors.request.use(
@@ -36,6 +40,7 @@ let setInterceptors = instance => {
             const errorCode = response.status;
             if (errorCode == 401) {
                 deleteTokenToStorage();
+                deleteSearchWordToStorage();
                 Vue.$toast.error(response.data.message, {
                     timeout: 2000,
                 });

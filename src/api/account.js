@@ -1,3 +1,4 @@
+import { deleteSearchWordToStorage } from '@/utils/storage';
 import { account } from './index';
 
 export const login = async parameter => {
@@ -9,5 +10,6 @@ export const signUp = async parameter => {
 };
 
 export const logout = async () => {
+    deleteSearchWordToStorage();
     return await account.post(`/account/logout`);
 };

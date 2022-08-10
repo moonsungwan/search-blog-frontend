@@ -1,21 +1,26 @@
-const headerName = 'Authorization';
+const headerKey = 'Authorization';
+const searchKey = 'searchWord';
 
 export const saveTokenToStorage = value => {
-    localStorage.setItem(headerName, value);
+    localStorage.setItem(headerKey, value);
 };
 
 export const deleteTokenToStorage = () => {
-    localStorage.setItem(headerName, '');
+    localStorage.setItem(headerKey, '');
 };
 
 export const getTokenFromStorage = () => {
-    return localStorage.getItem(headerName);
+    return localStorage.getItem(headerKey);
 };
 
 export const saveSearchWordToStorage = value => {
-    sessionStorage.setItem('searchWord', value);
+    sessionStorage.setItem(searchKey, value);
 };
 
 export const getSearchWordToStorage = value => {
-    return sessionStorage.getItem('searchWord');
+    return sessionStorage.getItem(searchKey);
+};
+
+export const deleteSearchWordToStorage = value => {
+    return sessionStorage.setItem(searchKey, '');
 };
