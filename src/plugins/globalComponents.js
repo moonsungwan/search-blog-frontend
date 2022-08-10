@@ -1,27 +1,13 @@
-import upperFirst from 'lodash/upperFirst';
-import camelCase from 'lodash/camelCase';
+import TheHeader from '@/components/common/TheHeader';
+import BlogTable from '@/components/BlogTable';
+import BookmarkTable from '@/components/BookmarkTable';
 import Pagination from 'vue-pagination-2';
 
 export default {
     install(Vue) {
-        const requireComponent = require.context(
-            '/src/components/common',
-            false,
-            /(Base|The)[A-Z]\w+\.(vue|js)$/,
-        );
-        requireComponent.keys().forEach(fileName => {
-            const componentConfig = requireComponent(fileName);
-            const componentName = upperFirst(
-                camelCase(
-                    fileName
-                        .split('/')
-                        .pop()
-                        .replace(/\.\w+$/, ''),
-                ),
-            );
-            Vue.component(componentName, componentConfig.default || componentConfig);
-        });
-
+        Vue.component(TheHeader.name, TheHeader);
+        Vue.component(BlogTable.name, BlogTable);
+        Vue.component(BookmarkTable.name, BookmarkTable);
         Vue.component('pagination', Pagination);
     },
 };

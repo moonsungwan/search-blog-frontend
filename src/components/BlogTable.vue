@@ -31,7 +31,7 @@
 </template>
 <script>
 export default {
-    name: 'BaseTable',
+    name: 'BlogTable',
     props: {
         list: {
             type: Array,

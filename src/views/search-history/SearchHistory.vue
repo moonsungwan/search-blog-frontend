@@ -6,7 +6,13 @@
                 <tbody>
                     <template v-if="!$utils.isEmpty(this.list)">
                         <tr v-for="item in this.list" :key="item.id">
-                            <td class="rank">{{ item.searchWord }}</td>
+                            <td
+                                class="rank"
+                                style="cursor: pointer;"
+                                v-on:click="search(item.searchWord)"
+                            >
+                                {{ item.searchWord }}
+                            </td>
                             <td class="points">{{ item.searchCount }}</td>
                         </tr>
                     </template>
@@ -27,6 +33,9 @@ export default {
         this.getList();
     },
     methods: {
+        search(searchWord) {
+            this.$emit('OnSearchHistory', searchWord);
+        },
         async getList() {
             const { data } = await this.$store.dispatch('GET_SEARCH_HISTORY_LIST');
             this.list = data;

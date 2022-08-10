@@ -42,6 +42,7 @@
 
 <script>
 import { saveTokenToStorage } from '@/utils/storage.js';
+
 export default {
     data() {
         return {

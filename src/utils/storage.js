@@ -1,11 +1,21 @@
-export const saveTokenToStorage = async value => {
-    localStorage.setItem('Authorization', value);
+const headerName = 'Authorization';
+
+export const saveTokenToStorage = value => {
+    localStorage.setItem(headerName, value);
 };
 
-export const deleteTokenToStorage = async () => {
-    localStorage.setItem('Authorization', '');
+export const deleteTokenToStorage = () => {
+    localStorage.setItem(headerName, '');
 };
 
 export const getTokenFromStorage = () => {
-    return localStorage.getItem('Authorization');
+    return localStorage.getItem(headerName);
+};
+
+export const saveSearchWordToStorage = value => {
+    sessionStorage.setItem('searchWord', value);
+};
+
+export const getSearchWordToStorage = value => {
+    return sessionStorage.getItem('searchWord');
 };

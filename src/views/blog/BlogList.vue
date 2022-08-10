@@ -57,10 +57,10 @@
                     </ul>
                 </div>
             </div>
-            <search-history ref="history"></search-history>
+            <search-history ref="history" @OnSearchHistory="searchHistory"></search-history>
             <div id="divContents" class="contents_comm contents_faq" style="display: block;">
                 <div class="wrap_comm">
-                    <base-table
+                    <blog-table
                         :list="this.list"
                         @OnGoDetail="goDetail"
                         @OnRegistBookmark="registBookmark"
@@ -77,6 +77,8 @@
 </template>
 <script>
 import SearchHistory from '@/views/search-history/SearchHistory';
+import { saveSearchWordToStorage, getSearchWordToStorage } from '@/utils/storage.js';
+
 export default {
     components: {
         SearchHistory,
@@ -93,6 +95,11 @@ export default {
                 records: 0,
             },
         };
+    },
+    created() {
+        this.parameters.query = getSearchWordToStorage();
+
+        this.getList();
     },
     methods: {
         validate() {
@@ -111,8 +118,14 @@ export default {
             this.parameters.page = page;
             this.getList();
         },
+        searchHistory(searchWord) {
+            this.parameters.query = searchWord;
+            this.enterQuery();
+        },
         async enterQuery() {
             if (!this.$utils.isEmpty(this.parameters.query)) {
+                saveSearchWordToStorage(this.parameters.query);
+
                 this.registSearchHistory();
                 this.getList();
             }
