@@ -53,7 +53,7 @@ export default {
     data() {
         return {
             data: {
-                loginId: 'accountB',
+                loginId: 'account2',
                 nickName: '회원가입테스트',
                 password: '1234',
             },
