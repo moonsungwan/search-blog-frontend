@@ -47,7 +47,7 @@ export default {
     data() {
         return {
             data: {
-                loginId: 'accountA',
+                loginId: 'account1',
                 password: '1234',
             },
         };

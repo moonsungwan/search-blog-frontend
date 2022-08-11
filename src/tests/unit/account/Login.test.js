@@ -11,7 +11,7 @@ const wrapper = createWrapper(Login);
 beforeEach(() => {
     wrapper.setData({
         data: {
-            loginId: 'accountA',
+            loginId: 'account1',
             password: '1234',
         },
     });
