@@ -92,15 +92,15 @@ $ npm test Login.test.js
 * ### 북마크 즐겨찾기
     * 북마크 목록 클릭시 로그인 한 정보에 맞는 북마크 목록 이동
     * 블로그 삭제 클릭시로그인 한 정보로 삭제 처리
-    * 같은 블로그 중복 저장되도록 처리
+    * 블로그 중복 등록시 예외처리
     * 북마크 제목 클릭시 북마크 URL 새창 열기 
 ---
 ## 결과화면
 * ### 로그인
-![image](https://user-images.githubusercontent.com/18672444/183444777-5e6f1b07-797f-46a0-b46d-67d242c5d53d.png)
+![image](https://user-images.githubusercontent.com/18672444/184065827-f8fbae9c-33e9-49fe-9379-c4a9c3fafc9f.png)
 
 * ### 회원가입
-![image](https://user-images.githubusercontent.com/18672444/183445004-62d3fddf-46df-4ac6-8491-e8f134d0060e.png)
+![image](https://user-images.githubusercontent.com/18672444/184065901-0f886a9f-72f8-46b3-bfa0-81faf73c4f86.png)
 
 * ### 블로그 검색 (캡처를 위해 10개 표시 - 기본 25개)
 ![image](https://user-images.githubusercontent.com/18672444/183687422-11d1545a-bcab-4d83-82e9-d8487daeaae6.png)
