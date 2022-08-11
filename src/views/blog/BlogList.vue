@@ -51,7 +51,7 @@
                                 v-on:click="changeSort(item.value)"
                             >
                                 <span id="spanLageType0" class="txt_btn">{{ item.title }}</span
-                                ><span class="ico_kakaopay ico_next"></span>
+                                ><span class="ico_next"></span>
                             </button>
                         </li>
                     </ul>
